@@ -1,0 +1,76 @@
+{
+    "type": "action",
+    "actions": [
+    {
+      "locatorType": "id",
+      "location": "q",
+      "type": "click"
+    },
+    {
+      "locatorType": "xpath",
+      "location": "/html/body/header/div/div/div[1]/div[1]/form/div/div[2]/div[1]/a",
+      "type": "click"
+    },
+    {
+      "locatorType": "xpath",
+      "location": "/html/body/header/div/div/div[1]/div[1]/form/div/div[2]/div[2]/input",
+      "type": "clear"
+    },
+    {
+      "locatorType": "xpath",
+      "location": "/html/body/header/div/div/div[1]/div[1]/form/div/div[2]/div[2]/input",
+      "type": "input",
+      "value": "United States"
+    },
+    {
+      "locatorType": "xpath",
+      "location": "/html/body/header/div/div/div[1]/div[1]/form/div/div[1]/div/div[1]/input",
+      "type": "click"
+    },
+    {
+      "type": "scrape",
+      "elements":
+        [
+            {
+            "label":"url",
+            "location": "/html/body/div[2]/section[2]/div[4]/div[1]/div/div/a",
+            "locatorType": "xpath",
+            "attribute": "href"
+            },
+            {
+            "label":"Name",
+            "location": "/html/body/div[2]/section[2]/div[4]/div[1]/div/div/a/div[2]/h3",
+            "locatorType": "xpath",
+            "attribute": "text"
+            },
+            {
+            "label":"Artist",
+            "location": "/html/body/div[2]/section[2]/div[4]/div[1]/div/div/a/div[2]/p/span",
+            "locatorType": "xpath",
+            "attribute": "text"
+            },
+            {
+            "label":"Time",
+            "location": "/html/body/div[2]/section[2]/div[4]/div[1]/div/div/a/div[2]/ul/li[1]/span",
+            "locatorType": "xpath",
+            "attribute": "text"
+            }
+        ]
+    },
+    {
+        "location":"/html/body/div[2]/section[2]/div[4]/nav/div/ul/li[2]/a",
+        "locatorType":"xpath",
+        "type":"click"
+    },
+    {
+        "type":"loop",
+        "stepNo": 5,
+        "endCondition":
+        {
+            "location":"/html/body/div[2]/section[2]/div[4]/nav/div/ul/li[2]/a",
+            "locatorType":"xpath",
+            "condition":"not_visible"
+        }
+    }
+    ]
+}
